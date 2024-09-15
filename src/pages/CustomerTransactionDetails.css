@@ -1,0 +1,46 @@
+.transaction-details-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: cursive;
+}
+
+.transaction-details-section h2 {
+  text-align: center;
+  color: #296073;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #3596b5;
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+h3 {
+  margin-top: 20px;
+  text-align: center;
+  color: #296073;
+}

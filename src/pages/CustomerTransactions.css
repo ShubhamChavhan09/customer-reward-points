@@ -1,0 +1,68 @@
+.customer-transactions-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: cursive;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.accordion {
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion h3 {
+  padding: 10px 20px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #3596b5;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+.accordion-content {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.transaction-details {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 0 0 8px 8px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.transaction-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.transaction-item p {
+  margin: 0;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: #296073;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1fc8b5;
+}
