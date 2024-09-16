@@ -26,7 +26,9 @@ To run this project locally, follow these steps:
 2. Change your current working directory to the project folder
 
 3. Install Dependencies: 
-   npm install
+   - npm install
+   - npm i react-router-dom
+   - npm install --save-dev @testing-library/react @testing-library/jest
 
 4. Once the dependencies are installed, you can start the application with the following command: 
    npm start
