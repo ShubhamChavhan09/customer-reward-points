@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CustomerTransactions from "../pages/CustomerTransactions";
 import { fetchTransactions } from "../utils/api";
 
+// Mock the fetchCustomers function
 jest.mock("../utils/api");
 
 describe("CustomerTransactions Component", () => {
@@ -34,7 +35,7 @@ describe("CustomerTransactions Component", () => {
         transactions: [
           { date: "2024-08-01", amount: 120 },
           { date: "2024-07-01", amount: 70 },
-          { date: "2024-03-01", amount: 30 },
+          { date: "2024-03-01", amount: 30 }, // This one should not be displayed (older than 3 months)
         ],
       },
     ];
@@ -43,18 +44,22 @@ describe("CustomerTransactions Component", () => {
 
     render(<CustomerTransactions />);
 
+    // customer name is displayed
     await waitFor(() => {
       expect(screen.getByText(/john doe/i)).toBeInTheDocument();
     });
 
+    // clicking the accordion to expand it
     const accordionButton = screen.getByText(/john doe/i);
     fireEvent.click(accordionButton);
 
+    // Checking if the transactions are displayed after the click
     expect(screen.getByText("Date: 1/8/2024")).toBeInTheDocument();
     expect(screen.getByText("Amount: $120.00")).toBeInTheDocument();
     expect(screen.getByText("Date: 1/7/2024")).toBeInTheDocument();
     expect(screen.getByText("Amount: $70.00")).toBeInTheDocument();
 
+    // the transaction older than 3 months is not displayed
     expect(screen.queryByText("03/01/2024")).not.toBeInTheDocument();
   });
 
@@ -75,6 +80,7 @@ describe("CustomerTransactions Component", () => {
       expect(screen.getByText(/jane smith/i)).toBeInTheDocument();
     });
 
+    // Click the accordion to open it
     const accordionButton = screen.getByText(/jane smith/i);
     fireEvent.click(accordionButton);
 

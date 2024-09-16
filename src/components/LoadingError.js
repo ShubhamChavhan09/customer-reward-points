@@ -10,6 +10,7 @@ const LoadingError = ({ isLoading, isError }) => {
     );
   }
 
+  //Error screeen
   if (isError) {
     return (
       <div className="loading-error-container">

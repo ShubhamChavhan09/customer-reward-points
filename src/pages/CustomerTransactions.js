@@ -5,10 +5,11 @@ import LoadingError from "../components/LoadingError";
 import "./CustomerTransactions.css";
 
 const CustomerTransactions = () => {
-  const [customers, setCustomers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [customers, setCustomers] = useState([]); // State to store customer data
+  const [loading, setLoading] = useState(true); // State to manage loading state
+  const [error, setError] = useState(null); // State to manage errors
 
+  // Fetch customer data from mock API
   useEffect(() => {
     fetchTransactions()
       .then((data) => {
@@ -32,9 +33,13 @@ const CustomerTransactions = () => {
     });
   };
 
+  // Loading Screen
   if (loading) return <LoadingError isLoading />;
+
+  //Error handling
   if (error) return <LoadingError isError />;
 
+  // If customer data is available, display it
   return (
     <div className="customer-transactions-container">
       <h1>Customer Reward Program</h1>

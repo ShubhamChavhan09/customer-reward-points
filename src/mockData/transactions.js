@@ -1,3 +1,5 @@
+// Mock data for customers and their transactions
+
 const transactions = [
   {
     customerId: 1,

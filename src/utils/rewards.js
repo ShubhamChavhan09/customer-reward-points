@@ -1,3 +1,4 @@
+// function to calculate rewards based on the transaction amount
 export const calculateRewards = (amount) => {
   let rewards = 0;
 
@@ -12,6 +13,7 @@ export const calculateRewards = (amount) => {
   return Math.floor(rewards);
 };
 
+// function to calculate total rewards based on the transaction amount of all the 3 months
 export const calculateMonthlyTotals = (transactions) => {
   const rewardsByMonth = transactions.reduce((acc, { date, amount }) => {
     const month = new Date(date).toLocaleString("default", {

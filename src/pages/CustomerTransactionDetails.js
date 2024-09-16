@@ -6,11 +6,12 @@ import LoadingError from "../components/LoadingError";
 import "./CustomerTransactionDetails.css";
 
 const CustomerTransactionDetails = () => {
-  const { customerId } = useParams();
+  const { customerId } = useParams(); // Get customer ID from URL
   const [customer, setCustomer] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true); //loading state
+  const [error, setError] = useState(false); //error state
 
+  // Fetch customer data based on the ID
   useEffect(() => {
     fetchTransactions()
       .then((data) => {

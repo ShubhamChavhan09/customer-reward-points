@@ -1,3 +1,5 @@
+//Accordion opens on clicking customer
+
 import React, { useState } from "react";
 
 const Accordion = ({ customer, children }) => {
